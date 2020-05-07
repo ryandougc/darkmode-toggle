@@ -1,5 +1,5 @@
 checkDarkMode();
-console.log(navigator.userAgent)
+
 function toggleDarkMode() {
     console.log(document.body.classList);
     document.body.classList.toggle('dark');
