@@ -1,0 +1,119 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    --background-color: rgb(241, 239, 239);
+    --accent-color: #ccc;
+    --text-color: rgb(36, 36, 36);
+
+    --slider-color: #fff;
+    --sun-color: rgb(224, 187, 22);
+    --moon-color: rgb(251, 253, 255);
+
+    --darkMode-transition-speed: 300ms;
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: var(--darkMode-transition-speed);
+}
+
+body.dark {
+    --background-color: rgb(36, 36, 36);
+    --accent-color: rgb(85, 85, 85);
+    --text-color: rgb(241, 239, 239);
+    --slider-color: #ccc;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+    position: fixed;
+    display: inline-block;
+    top: 3em;
+    right: 3em;
+    width: 52px;
+    height: 28px;
+    line-height: 13px;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+.toggle-switch p{
+    text-align: center;
+    font-size: 0.75em;
+    padding-top: .25em;
+}
+
+.toggle-switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--accent-color) !important;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle-switch .slider:before {
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    height: 22px;
+    width: 22px;
+    line-height: 28px;
+    left: 3px;
+
+    background-color: var(--slider-color);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.toggle-switch input:checked + .slider {
+    background-color: var(--accent-color) !important;
+}
+
+.toggle-switch input:focus + .slider {
+    box-shadow: 0 0 1px var(--accent-color);
+}
+input:checked + .slider:before {
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
+}
+
+.toggle-switch .sun {
+    fill: var(--sun-color);
+    height: 22px;
+    width: 22px;
+    margin-left: 4px;
+}
+
+.toggle-switch .moon {
+    height: 20px;
+    width: 20px;
+    fill: var(--moon-color);
+    margin-right: 4px;
+}
+
+div {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
